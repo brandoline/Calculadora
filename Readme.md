@@ -1,0 +1,1 @@
+Começaremos nosso projeto de calculadora no c++;
