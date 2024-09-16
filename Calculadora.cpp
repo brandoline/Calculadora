@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctype.h>
 #include <stdbool.h>
-#include "calculos.h"
+#include "Calculos.h"
 using namespace std;
 
 int main() {
