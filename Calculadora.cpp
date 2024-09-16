@@ -1,63 +1,58 @@
 #include <iostream>
+#include <ctype.h>
+#include <stdbool.h>
+#include "calculos.h"
 using namespace std;
-
-double Adicao(double NumeroUm){
-    double Resultado = 0, NumeroDois = 0;
-
-    cin >> NumeroDois;
-    Resultado = NumeroUm + NumeroDois;
-
-    return Resultado;
-}
 
 int main() {
     
     double NumeroUm = 0, NumeroDois = 0, Resultado = 0;
     char Opcao;
 
-    bool saida = false;
+    bool Saida = false;
     cin >> NumeroUm;
 
 do{
     cin >> Opcao;
 
-    switch (Opcao){
+    switch (toupper(Opcao)){
         // ADICAO
         case '+':
-            cin >> NumeroDois;
-            Resultado = NumeroUm + NumeroDois;
-            cout << Resultado;
+            Resultado = Adicao(NumeroUm);
             NumeroUm = Resultado;
+            cout << Resultado;
         break;
 
         // SUBTRACAO
         case '-':
-            cin >> NumeroDois;
-            Resultado = NumeroUm - NumeroDois;
-            cout << Resultado;
+            Resultado = Subtracao(NumeroUm);
             NumeroUm = Resultado;
+            cout << Resultado;
         break;
 
         // DIVISAO
         case '/':
-            cin >> NumeroDois;
-            Resultado = NumeroUm / NumeroDois;
-            cout << Resultado;
+            Resultado = Divisao(NumeroUm);
             NumeroUm = Resultado;
-
+            cout << Resultado;
         break;
 
         // MULTIPLICACAO
         case '*':
-            cin >> NumeroDois;
-            Resultado = NumeroUm * NumeroDois;
-            cout << Resultado;
+            Resultado = Multiplicacao(NumeroUm);
             NumeroUm = Resultado;
+            cout << Resultado;
         break;
+
+      // CLEAR
+        case 'C':
+            system("cls");
+            cin >> NumeroUm;
+        break;  
 
         // SAIDA 
         case 'S':
-            saida = true;
+            Saida = true;
         break;
 
         default:
@@ -65,7 +60,7 @@ do{
         break;
     }
 
-}while(!saida);
+}while(!Saida);
 
     return 0;
 }
